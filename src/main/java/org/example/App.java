@@ -1,5 +1,6 @@
 package org.example;
 
+import javax.swing.*;
 import java.util.Arrays;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.stream.IntStream;
@@ -9,6 +10,8 @@ import java.util.stream.IntStream;
  */
 public class App {
     public static void main(String[] args) {
+        // create a jframe
+        JFrame frame = new JFrame("JOptionPane showMessageDialog example");
 
         int[] randomNumbers = IntStream.generate(
                                 () -> ThreadLocalRandom.current().nextInt(0, 10000 + 1))
@@ -29,7 +32,8 @@ public class App {
         Arrays.stream(randomNumbers)
                 .forEach(System.out::println);
 
-        System.out.println("\n\nThe largest number is: " + largestNumber);
+        JOptionPane.showMessageDialog(frame, "\\n\\nThe largest number is: " + largestNumber);
+        JOptionPane.showMessageDialog(frame, "\\n\\nThe smallest number is: " + smallestNumber);
 
 
 
